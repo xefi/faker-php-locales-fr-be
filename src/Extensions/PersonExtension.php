@@ -78,7 +78,7 @@ class PersonExtension extends BasePersonExtension
         $rrn = $baseNumber . $checkStr;
 
         if ($formatted) {
-            $rrn = substr($rrn, 0, 2) . '.' . substr($rrn, 2, 2) . '.' . substr($rrn, 4, 2) . '-' . substr($rrn, 6, 3) . '.' . substr($rrn, 9, 2);
+            $rrn = substr($rrn, 0, 2) . ' ' . substr($rrn, 2, 2) . ' ' . substr($rrn, 4, 2) . ' ' . substr($rrn, 6, 3) . ' ' . substr($rrn, 9, 2);
         }
 
         return $rrn;

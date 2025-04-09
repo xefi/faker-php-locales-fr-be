@@ -184,12 +184,21 @@ final class PersonExtensionTest extends TestCase
     {
         for ($i = 0; $i < 100; $i++) {
             $rrn = $this->faker->rrn('M');
-            $this->assertMatchesRegularExpression('/^\d{6}-?\d{3}-?\d{2}$/', $rrn);
+            $this->assertMatchesRegularExpression('/^\d{11}$/', $rrn);
             $this->assertTrue(((int) substr(str_replace('-', '', $rrn), 8, 1)) % 2 === 1);
 
             $rrn = $this->faker->rrn('F');
-            $this->assertMatchesRegularExpression('/^\d{6}-?\d{3}-?\d{2}$/', $rrn);
+            $this->assertMatchesRegularExpression('/^\d{11}$/', $rrn);
             $this->assertTrue(((int) substr(str_replace('-', '', $rrn), 8, 1)) % 2 === 0);
+        }
+    }
+
+    public function testFormattedRRN(): void
+    {
+        for ($i = 0; $i < 100; $i++) {
+            $rrn = $this->faker->rrn('M', true);
+            $this->assertMatchesRegularExpression('/^\d{2} \d{2} \d{2} \d{3} \d{2}$/', $rrn);
+            $this->assertTrue(((int) substr(str_replace(' ', '', $rrn), 8, 1)) % 2 === 1);
         }
     }
 
