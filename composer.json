@@ -1,12 +1,12 @@
 {
-  "name": "xefi/faker-php-locales-en-be",
+  "name": "xefi/faker-php-locales-fr-be",
   "type": "library",
-  "description": "Faker extension to include en_BE locale",
+  "description": "Faker extension to include fr_BE locale",
   "keywords": [
     "faker",
     "data",
-    "en",
-    "in"
+    "fr",
+    "be"
   ],
   "license": "MIT",
   "authors": [
