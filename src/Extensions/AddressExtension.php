@@ -6,6 +6,11 @@ use Xefi\Faker\Extensions\Extension;
 
 class AddressExtension extends Extension
 {
+    public function getLocale(): string|null
+    {
+        return 'fr_BE';
+    }
+
     protected $provinces = [
         'Brabant Wallon', 'Hainaut', 'Liège', 'Luxembourg', 'Namur', 'Anvers', 'Brabant Flamand',
         'Flandre Occidentale', 'Flandre Orientale', 'Flandre', 'Bruxelles-Capitale',
