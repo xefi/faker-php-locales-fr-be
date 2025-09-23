@@ -3,6 +3,7 @@
 namespace Xefi\Faker\FrBe\Tests\Unit;
 
 use Xefi\Faker\Container\Container;
+use Xefi\Faker\FrBe\FakerFrBeServiceProvider;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {
@@ -12,7 +13,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     {
         Container::packageManifestPath('/tmp/packages.php');
 
-        (new \Xefi\Faker\FrBe\FakerFrBeServiceProvider())->boot();
+        (new FakerFrBeServiceProvider())->boot();
 
         $this->faker = (new Container(false))->locale('fr_BE');
     }
