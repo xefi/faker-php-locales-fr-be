@@ -31,4 +31,14 @@ final class PhoneExtensionTest extends TestCase
             $this->assertMatchesRegularExpression('/^\+32([24]\d{7}|(10|65|71|81|87)\d{6}|4[6-9]\d{7})$/', $this->faker->indicatoredPhoneNumber());
         }
     }
+
+    public function testIndicatorIsSeparatedFromTheNumber(): void
+    {
+        for ($i = 0; $i < 100; $i++) {
+            $this->assertStringStartsWith('+32 ', $this->faker->spacedIndicatoredPhoneNumber());
+            $this->assertStringStartsWith('+32-', $this->faker->dashedIndicatoredPhoneNumber());
+            $this->assertStringStartsWith('+32.', $this->faker->dottedIndicatoredPhoneNumber());
+            $this->assertMatchesRegularExpression('/^\+32\d+$/', $this->faker->indicatoredPhoneNumber());
+        }
+    }
 }
